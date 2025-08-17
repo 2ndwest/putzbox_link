@@ -348,6 +348,7 @@ Available versions:",
         println!("Unsupported version! {target_version}");
         return;
     };
+    println!("Woah Putz! Make sure that you're either on the halonet WiFi or connected by Ethernet.");
     println!("Targeting Rekordbox version {target_version}");
 
     let socket = {
@@ -392,7 +393,6 @@ Available versions:",
 
     let mut stdout = stdout();
 
-    println!("Entering loop");
     loop {
         let delta = Instant::now() - last_instant; // Is this timer accurate enough?
         last_instant = Instant::now();
@@ -485,7 +485,7 @@ fn download_offsets() {
         .args([
             "-o",
             "offsets",
-            "https://raw.githubusercontent.com/James-Randall-14/rkbx_osc/master/offsets",
+            "https://raw.githubusercontent.com/James-Randall-14/rkbx_link/refs/heads/main/offsets",
         ])
         .output()
     {
