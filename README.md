@@ -84,17 +84,24 @@ Between versions, the only thing that changes are the memory offsets in the offs
 5. Make the other deck the master deck and scan for that BPM. At this point, there should only be one or two memory addresses left in the cheat engine table. Double click it to add it to your list of tracked values.
 6. Go to Memory View -> Tools -> Pointer Scan -> Pointer Scanner -> Scan for Pointer.
 7. Perform a pointer scan with the following settings:
+
 ![alt text](images/pointer_settings.png)
+
 (Note that the Nr of threads scanning will be different depending on your CPU specs)
+
 8. Save that pointerlist as MasterBPM.PTR or something, just in case you fuck up a later step and want to come back to this part.
 9. With Cheat Engine open, restart Rekordbox. Once it has relaunched, select the Rekordbox Process in Cheat Engine again like you did in step 1. Load another track and set the master deck.
 10. Now go to Pointer Scanner -> Rescan Memory and perform a scan with the following settings:
+
 ![alt text](images/pointer_settings.png)
+
 11. You now have a list of pointers that will track Rekordbox Master Tempo across a restart. Double click one of those with a short offset list to add it to your list of tracked pointers.
 > NOTE: A short offset list means that it has only 3 or 4 offsets, which are relatively low numbers. The shorter the better.
 12. Repeat this process for the Beats and Bars of decks 1, 2, 3, and 4, as well as the index of the master deck.
 13. Once you have your list of every necessary pointer, double click on the "Address" field in your list of tracked pointers to pull up a pane of information about the pointer that looks like this:
+
 ![alt text](images/pointer_info.png)
+
 14. Record this information in the offsets file in the following format:
 `0593EF10 60 180 28 B68`
 
