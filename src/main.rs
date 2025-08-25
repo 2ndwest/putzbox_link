@@ -204,7 +204,7 @@ impl BeatKeeper {
     pub fn get_bar_fraction(&mut self) -> f32 {
         (self.bar_fraction
             + if let Some(rb) = &self.rb {
-                let bars_per_micro = rb.master_bpm / 60. / 1000000.;
+                let bars_per_micro = rb.master_bpm / 60. / 1000000. / 4.;
                 self.offset_micros * bars_per_micro
             } else {
                 0.
@@ -394,8 +394,9 @@ Available versions:",
     let mut stdout = stdout();
 
     loop {
-        let delta = Instant::now() - last_instant; // Is this timer accurate enough?
-        last_instant = Instant::now();
+        let now = Instant::now();
+        let delta = now - last_instant;
+        last_instant = now;
 
         keeper.update(delta); // Get values, advance time
 

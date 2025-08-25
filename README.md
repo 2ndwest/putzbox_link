@@ -76,6 +76,8 @@ In case James is dead or cruft, here's the rough process for updating this softw
 
 Between versions, the only thing that changes are the memory offsets in the offsets file. You will need to use Cheat Engine to detect the new offsets and record them. Below are the steps to find the offsets for the master BPM as an example.
 
+> Quick note: For the last couple of rekordbox updates, the actual values of the offsets have stayed the same for the beat and bar values. The only thing that has changed is the base address.
+
 ### Using Cheat Engine:
 1. Launch Rekordbox and select that process in Cheat Engine
 2. Load tracks onto decks 1 and 2
